@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+        text-align: center;
+        margin: auto;
+        
+    }
+    #container{
+        width: 80%;
+        height: 80%;
+        margin: auto;
+        
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(2,1fr);
+        gap: 20px;
+        grid-template-areas: 
+        "a a b e"
+        "c d b e"
+        ;
+        padding: 20px;
+    }
+    .box{
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        color: white;
+        background-color: gray;
+        border-radius:5%;
+       padding: 16px;
+       font-size: 24px;
+        font-weight: bold;
+        text-align: start;
+    }
+    .box:nth-child(1){
+        grid-area: a;
+        
+    }
+    .box:nth-child(2){
+        grid-area: b;
+    }
+    .box:nth-child(3){
+        grid-area: c;
+    }
+    .box:nth-child(4){
+        grid-area: d;
+    }
+    .box:nth-child(5){
+        grid-area: e;
+        height: 98%;
+    }
+
+</style>
+<body>
+    <div id="container">
+        <div class="box">A</div>
+        <div class="box">B</div>
+        <div class="box">C</div>
+        <div class="box">D</div>
+        <div class="box">E</div>
+    </div>
+</body>
+</html>

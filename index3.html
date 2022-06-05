@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+#container{
+    width:100vw;
+    height: 100vh;
+    text-align: center;
+    margin: auto;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.head{
+    width: 40%;
+    margin: auto;
+   
+}
+#cards{
+    width: 70%;
+    margin: auto;
+   display: grid;
+   grid-template-columns: repeat(3,1fr);
+   grid-template-rows: 330px;
+   gap: 20px;
+}
+.box{
+   
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10%;
+}
+.box>p{
+    font-size: 16px;
+    font-weight: bold;
+}
+.box>p~h2~p{
+    font-style: italic;
+    font-weight: 100;
+}
+.box>p~h2~p~p{
+    font-style: normal;
+    font-weight: 100;
+}
+.box>p~h2{
+    color: green;
+}
+#cards>.box~.box>p~h2{
+    color: orange;
+}
+#cards>.box~.box~.box>p~h2{
+    color: rgb(90, 90, 216);
+}
+button{
+    margin-bottom: 8px;
+    width: 100px;
+    padding: 8px;
+    border: 2px solid rgb(123, 123, 227);
+    border-radius: 10%;
+    color: rgb(93, 93, 205);
+}
+.bluebtn>button{
+    background-color: rgb(111, 111, 232);
+    color: white;
+}
+
+@media all and (min-width: 480px) and (max-width: 720px) {
+    .head{
+        width: 70%;
+    }
+    #cards{
+    width: 90%;
+    margin: auto;
+   display: grid;
+   grid-template-columns: repeat(2,1fr);
+   grid-template-rows:repeat(2,330px);
+   gap: 20px;
+   margin-top: 20px;
+}
+}
+@media all and (min-width: 320px) and (max-width: 479px) {
+    .head{
+        width: 80%;
+    }
+    #cards{
+        display: grid;
+        grid-template-columns:100%;
+        grid-template-rows: repeat(4,300px);
+        gap: 20px ;
+}
+}
+
+</style>
+<body>
+
+    <div id="container">
+
+        <div class="head">
+    <h1>Choose a plan that right for your business</h1>
+    <p>We collect reviews from our users so you can get an honest opinion of what an experience with our website are really like!</p>
+</div>
+
+    <div id="cards">
+        <div class="box">
+            <p>Starter Plan</p>
+            <h2>Free</h2>
+            <p>Per Month</p>
+            <p>We collect reviews from our users so you can get an honest opinion of what an experience with our website</p>
+            <button>Start Now</button>
+        </div>
+        <div class="box bluebtn">
+            <p>Business Plan</p>
+            <h2>$39.00</h2>
+            <p>Per month</p>
+            <p>We collect reviews from our users so you can get an honest opinion of what an experience with our website</p>
+            <button>Start Now</button>
+        </div>
+        <div class="box">
+            <p>Premium Plan</p>
+            <h2>$59.00</h2>
+            <p>Per month</p>
+            <p>We collect reviews from our users so you can get an honest opinion of what an experience with our website</p>
+            <button>Start Now</button>
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>

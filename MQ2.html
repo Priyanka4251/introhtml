@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #nav{
+        width: 100%;
+        height: 80px;
+        background-color: yellow;
+        padding: 8px;
+        font-weight: bold;
+        font-size: 22px;
+        color: gray;
+    }
+    #container{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: 300px;
+        gap: 40px;
+        font-weight: bold;
+        font-size: 20px;
+        color: gray;
+    }
+    .box{
+        margin-top: 20px;
+    }
+    #container>.red{
+        background-color: red;
+        padding: 8px;
+    }
+    #container>.green{
+        background-color: greenyellow;
+        padding: 8px;
+    }
+    @media all and (min-width: 320px) and (max-width: 479px){
+        #container{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(2,300px);
+        gap: 10px;
+        font-weight: bold;
+        font-size: 20px;
+        color: gray;
+    }
+    }
+</style>
+<body>
+    <div id="nav">Navigation</div>
+
+    <div id="container">
+        <div class="box red">LEFT BOX</div>
+        <div class="box green">RIGHT BOX</div>
+    </div>
+</body>
+</html>

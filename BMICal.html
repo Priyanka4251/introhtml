@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Check your BMI</h1>
+    <p>Enter your weight and height below to check your BMI results</p>
+    <p>Put your weight here (KG)</p>
+    <input type="number" id="inputKg" >
+    <br>
+    <p>And your height here (M)</p>
+    <br>
+    <input type="number" id="inputCm">
+    <br>
+    <button>Calculate BMI</button>
+    <br>
+    <br>
+    <p id="result"></p>
+</body>
+</html>
+<script>
+
+        let Kg = document.querySelector("#inputKg");
+        let height= document.querySelector("#inputCm");
+
+    document.querySelector("button").addEventListener("click",calBMI);
+   
+    function calBMI(){
+        
+        let para= document.querySelector("#result");
+        let BMI=Math.round((eval(Kg.value/ (height.value**2)))*10)/10;
+        if(BMI >=3){
+            para.innerText= "Your BMI is "+ BMI + " which means You are Obese" ;
+        }else if(BMI >=2.5 && BMI <= 2.9){
+            para.innerText= "Your BMI is "+ BMI + " which means You are Overweight" ;
+        }else if(BMI>=1.8 && BMI<=2.4){
+            para.innerText= "Your BMI is "+ BMI + " which means You are Normal Weight" ;
+        } else{
+            para.innerText= "Your BMI is "+ BMI + " which means You are Under Weight" ;
+        }
+    }
+
+</script>

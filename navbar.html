@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #navbar{
+        width: 80vw;
+        height: 10vh;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .box{
+        width: 12%;
+       
+        justify-content: space-around;
+        align-content: center;
+        font-weight: bold;
+        display: flex;
+        font-size: 12px;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        /* flex-wrap: wrap; */
+    }
+    .box.refer{
+        display: flex;
+         align-items: center; 
+    }
+    .refer{
+        flex-basis: 200px;
+        height: 80%;
+        background-color: rgb(237, 237, 245);
+        color: blue;
+    }
+    .logo{
+        flex-basis: 400px;
+    }
+    img{
+        width: 40%;
+    }
+    .box.login{
+        flex-basis: 300px;
+        display: flex;
+       
+    }
+    button{
+        border: 2px solid rgb(237, 69, 69);
+        color: rgb(237, 69, 69);
+        border-radius: 14%;
+        /* margin-left: 8px; */
+        padding: 12px 24px 12px 24px;
+        font-weight: bold;
+    }
+    .box.hire{
+        flex-basis: 140px;
+    }
+.box.faq{
+    flex-basis: 60px;
+}
+</style>
+<body>
+    <div id="navbar">
+        <div class="box logo">
+            <img src="https://mma.prnewswire.com/media/1631809/Masai_Logo.jpg?p=facebook" alt="">
+        </div>
+        <div class="box">COURSES ⩖</div>
+        <div class="box">FEES & ISA</div>
+        <div class="box">ABOUT US</div>
+        <div class="box hire">HIRE FROM US</div>
+        <div class="box faq">FAQ</div>
+        <div class="box">EVENTS</div>
+        <div class="box refer">REFER & EARN 🤝</div>
+        <div class="box login"> <button>LOGIN</button> </div>
+    </div>
+</body>
+</html>

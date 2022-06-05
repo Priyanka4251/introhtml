@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        text-align: center;
+        margin: auto;
+    }
+    #container1{
+        width: 40%;
+        margin: auto;
+        margin-top: 10px;
+        border: 1px solid red;
+        display: grid;
+        grid-template-columns: repeat(2,70px);
+        grid-template-rows: 70px;
+        justify-content: space-between;
+    }
+    #container1>div{
+        border: 2px solid black;
+        background-color:red ;
+    }
+    #container1>div~div{
+        background-color:green ;
+    }
+    #container1>div>p{
+        margin-top: 30px;
+    }
+
+    #container1~p{
+        margin-top: 60px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    #container2{
+        padding: 8px;
+       width: 35%;
+       height: 60vh;
+       margin: auto;
+       margin-top: 30px;
+       border: 1px solid red;
+       display: grid;
+       grid-template-columns: repeat(3,12%);
+       grid-template-rows: repeat(7,10%);
+       gap: 15px;
+       justify-content: center;
+       /* align-items: center; */
+       grid-template-areas: 
+         "one one one"
+         "one one one"
+         "two thr four"
+         "five six svn"
+         "et nine ten"
+         "elvn elvn elvn"
+         "twlv twlv twlv"
+       ;
+    }
+    #container2>div{
+        border: 2px solid black;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+    }
+
+    #container2>div:nth-child(1){
+        grid-area: one;
+        height: 70%;
+        padding: 8px;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        background-color: gray;
+    }
+    #container2>div:nth-child(2){
+        grid-area: two;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        background-color: green;
+    }
+    #container2>div:nth-child(3){
+        grid-area: thr;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        background-color: orange;
+    }
+    #container2>div:nth-child(4){
+        grid-area: four;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        background-color: green;
+    }
+    #container2>div:nth-child(5){
+        grid-area: five;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        background-color: orange;
+    }
+    #container2>div:nth-child(6){
+        grid-area: six;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        background-color: orange;
+    }
+    #container2>div:nth-child(7){
+        grid-area: svn;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        background-color: orange;
+    }
+    #container2>div:nth-child(8){
+        grid-area: et;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        background-color: green;
+    }
+    #container2>div:nth-child(9){
+        grid-area: nine;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        background-color: orange;
+    }
+    #container2>div:nth-child(10){
+        grid-area: ten;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        background-color: green;
+    }
+    #container2>div:nth-child(11){
+        grid-area: elvn;
+        width: 18%;
+        height: 100%;
+        margin: auto;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        background-color: purple;
+    }
+    #container2>div:nth-child(12){
+        grid-area: twlv;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        color: white;
+    }
+</style>
+
+<body>
+    
+    <div id="container1">
+        <div>
+
+            <p id="min">43
+               <p> MIN</p></p>
+        </div>
+        
+        <div>
+
+            <p id="max">2019
+              <p>MAX</p>  </p>
+        </div>
+        
+    </div>
+
+    <p>Score</p>
+    <div id="container2">
+
+        <div>#</div>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>0</div>
+        <div id="enter">Enter</div>
+
+    </div>
+
+
+</body>
+</html>
+<script>
+    let currMin=43;
+    let currMax=2019;
+   let min=document.querySelector("#min");
+   let max=document.querySelector("#max");
+   let enter=document.querySelector("#enter");
+   let numBtns= document.querySelectorAll("#container2>div");
+   let bag="";
+
+
+    for(let i=0;i<numBtns.length;i++){
+        numBtns[i].addEventListener("click", displayNumber)
+    }
+    function displayNumber(event){
+        let targetNum= event.target.innerText ;
+
+        if(targetNum=="Enter"){
+            if(Number(bag)>currMax){
+                document.querySelector("#max").innerText=bag;
+                currMax=Number(bag);
+                bag="";
+                document.querySelector("#container2>div").innerText="#";
+            } else if (Number(bag)<currMin) {
+                document.querySelector("#min").innerText=bag;
+                currMin=Number(bag);
+                bag="";
+                document.querySelector("#container2>div").innerText="#";
+            }else{
+                bag="";
+                document.querySelector("#container2>div").innerText="#";
+            }
+        }else{
+        bag+=targetNum;
+        document.querySelector("#container2>div").innerText=bag;
+        }    
+    }
+
+</script>
